@@ -19,9 +19,14 @@ const UserNameSchema = new Schema({
     required: [true, "Email required"]
     },
     thoughts: {
-      type: Date,
+    // _id reference for thought model
     },
     friends: {
-        type: awef
+        // _id values referencing the User model (self-reference)
+
     }
   });
+
+  const User = model('User', UserNameSchema);
+
+module.exports = User;
