@@ -12,11 +12,17 @@ const ReactionsSchema = new Schema({
         maxlength: 280      },
     username: {
         type: String,
-        required: true,    },
+        required: true,   
+       },
         createdAt: {
           type: Date,
           default: Date.now,
           get: createdAtVal => dateFormat(createdAtVal)
+      },
+},
+{
+  toJSON: {
+      getters: true,
       },
 }
   );
