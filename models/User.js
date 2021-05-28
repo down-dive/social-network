@@ -1,4 +1,6 @@
 const { Schema, model } = require('mongoose');
+const { isEmail } = require('validator');
+
 
 const UserNameSchema = new Schema({
     username: {
@@ -11,13 +13,13 @@ const UserNameSchema = new Schema({
         type: String,
         unique: true,
         validate: {
-            validator: function (v) {
-                return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+            validator: function(value) {
+                return isEmail(value);
+              },
+              message: 'You must give a valid email address'
             },
-            message: "Please enter a valid email"
-        },
-        required: [true, "Email required"]
-    },
+            required: 'You must provide an email address'
+          },
     thoughts: {
         // _id reference for thought model
     },

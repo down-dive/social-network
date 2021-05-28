@@ -3,9 +3,9 @@ const { Schema, model } = require('mongoose');
 
 const ReactionsSchema = new Schema({
     reactionId: {
-        type: ObjectId,
-        required: true,
-    },
+        type: Schema.Types.ObjectId,
+        default: () => new Types.ObjectId()
+      },
     createdAt: {
         type: Date,
         default: Date.now,
