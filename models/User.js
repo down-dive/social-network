@@ -20,9 +20,12 @@ const UserNameSchema = new Schema({
             },
             required: 'You must provide an email address'
           },
-    thoughts: {
-        // _id reference for thought model
-    },
+          thoughts: [
+            {
+              type: Schema.Types.ObjectId,
+              ref: 'Thought'
+            }
+          ],
     friends: {
         // _id values referencing the User model (self-reference)
 
