@@ -3,4 +3,31 @@ Content-Type: application/json
 ###
 POST http://localhost:3001/api/users HTTP/1.1
 Content-Type: application/json
+
+
+{
+  "username": "lernantino",
+  "email": "lernantino@gmail.com"
+}
+###
+PUT http://localhost:3001/api/users/60b28761c3227e1e7aad9f59 HTTP/1.1
+Content-Type: application/json
+
+
+{
+  "username": "ernantino",
+  "email": "lernantino@gmail.com"
+}
+###
+DELETE http://localhost:3001/api/users/60b28761c3227e1e7aad9f59 HTTP/1.1
+Content-Type: application/json
+
+
+{
+  "username": "ernantino",
+  "email": "lernantino@gmail.com"
+}
+###
+GET http://localhost:3001/api/thoughts HTTP/1.1
+Content-Type: application/json
 ###
