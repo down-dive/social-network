@@ -1,46 +1,46 @@
 const { Thought, User } = require('../models');
 
-const commentController = {
-    // add comment to pizza
-    addComment({ params, body }, res) {
+const thoughtController = {
+    // add thought to user
+    addThought({ params, body }, res) {
       console.log(body);
-      Comment.create(body)
+      Thought.create(body)
         .then(({ _id }) => {
-          return Pizza.findOneAndUpdate(
-            { _id: params.pizzaId },
-            { $push: { comments: _id } },
+          return User.findOneAndUpdate(
+            { _id: params.userId },
+            { $push: { thoughts: _id } },
             { new: true }
           );
         })
-        .then(dbPizzaData => {
-          if (!dbPizzaData) {
-            res.status(404).json({ message: 'No pizza found with this id!' });
+        .then(dbUserData => {
+          if (!dbUserData) {
+            res.status(404).json({ message: 'No user found with this id!' });
             return;
           }
-          res.json(dbPizzaData);
+          res.json(dbUserData);
         })
         .catch(err => res.json(err));
     },
   
-    // remove comment
-    removeComment({ params }, res) {
-      Comment.findOneAndDelete({ _id: params.commentId })
-        .then(deletedComment => {
-          if (!deletedComment) {
-            return res.status(404).json({ message: 'No comment with this id!' });
+    // remove thought
+    removeThought({ params }, res) {
+      Thought.findOneAndDelete({ _id: params.thoughtId })
+        .then(deletedThought => {
+          if (!deletedThought) {
+            return res.status(404).json({ message: 'No thought with this id!' });
           }
-          return Pizza.findOneAndUpdate(
-            { _id: params.pizzaId },
+          return User.findOneAndUpdate(
+            { _id: params.userId },
             { $pull: { comments: params.commentId } },
             { new: true }
           );
         })
-        .then(dbPizzaData => {
-          if (!dbPizzaData) {
-            res.status(404).json({ message: 'No pizza found with this id!' });
+        .then(dbUserData => {
+          if (!dbUserData) {
+            res.status(404).json({ message: 'No user found with this id!' });
             return;
           }
-          res.json(dbPizzaData);
+          res.json(dbUserData);
         })
         .catch(err => res.json(err));
     }
