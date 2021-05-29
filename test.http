@@ -31,3 +31,11 @@ Content-Type: application/json
 GET http://localhost:3001/api/thoughts HTTP/1.1
 Content-Type: application/json
 ###
+POST http://localhost:3001/api/thoughts HTTP/1.1
+Content-Type: application/json
+
+{
+  "thoughtText": "Here's a cool thought...",
+  "username": "lernantino",
+  "userId": "5edff358a0fcb779aa7b118b"
+}
