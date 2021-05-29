@@ -27,11 +27,19 @@ const UserNameSchema = new Schema({
               ref: 'Thought'
             }
           ],
-    friends: {
+    friends: [{
+        type: Schema.Types.ObjectId,
+              ref: 'User'
         // _id values referencing the User model (self-reference)
 
-    }
+    }],
+
+    
 });
+
+UserNameSchema.virtual('friends').get(function (name) {
+    return this.friends.lenght;
+})
 
 const User = model('User', UserNameSchema);
 
