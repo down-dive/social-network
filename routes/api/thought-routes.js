@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAllThoughts, addThought, removeThought } = require('../../controllers/thought-controller');
+const { getAllThoughts, getThoughtById, addThought, removeThought } = require('../../controllers/thought-controller');
 
 // /api/thoughts/<pizzaId>
 // router.route('/').get(function(req,res) {res.send({message:"something"})}).post(addThought);
@@ -9,6 +9,8 @@ const { getAllThoughts, addThought, removeThought } = require('../../controllers
 // router.route('/:userId/:thoughtId').delete(removeThought);
 
 router.route('/').get(getAllThoughts).post(addThought);
+
+router.route('/:thoughtId').get(getThoughtById);
 
 // /api/comments/<pizzaId>
 router.route('/:userId').post(addThought);

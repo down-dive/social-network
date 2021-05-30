@@ -10,16 +10,16 @@ Content-Type: application/json
   "email": "lernantino@gmail.com"
 }
 ###
-PUT http://localhost:3001/api/users/60b28761c3227e1e7aad9f59 HTTP/1.1
+PUT http://localhost:3001/api/users/60b32a7dd4c3536dab8f83de HTTP/1.1
 Content-Type: application/json
 
 
 {
-  "username": "ernantino",
+  "username": "Lernantino",
   "email": "lernantino@gmail.com"
 }
 ###
-DELETE http://localhost:3001/api/users/60b287ecc3227e1e7aad9f5a HTTP/1.1
+DELETE http://localhost:3001/api/users/60b327908ff3c656c5ea1813 HTTP/1.1
 Content-Type: application/json
 
 
@@ -32,10 +32,10 @@ GET http://localhost:3001/api/thoughts HTTP/1.1
 Content-Type: application/json
 ###
 ###
-GET http://localhost:3001/api/thoughts/60b318470381cf747cf1d70d HTTP/1.1
+GET http://localhost:3001/api/thoughts/60b327bf8ff3c656c5ea1815 HTTP/1.1
 Content-Type: application/json
 ###
-POST http://localhost:3001/api/thoughts/60b3188b0381cf747cf1d711 HTTP/1.1
+POST http://localhost:3001/api/thoughts/60b32a7dd4c3536dab8f83de HTTP/1.1
 Content-Type: application/json
 
 {
@@ -44,7 +44,7 @@ Content-Type: application/json
   "userId": "60b3188b0381cf747cf1d711"
 }
 ###
-DELETE http://localhost:3001/api/thoughts/60b3188b0381cf747cf1d711/60b319063bb75d840f01ddcc HTTP/1.1
+DELETE http://localhost:3001/api/thoughts/60b32a7dd4c3536dab8f83de/60b32abed4c3536dab8f83e0 HTTP/1.1
 Content-Type: application/json
 
 
