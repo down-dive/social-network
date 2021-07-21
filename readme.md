@@ -1,41 +1,90 @@
-# Social Network API
+# social-network-API
+
+![GitHub license badge](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
-RESTful API for a social network using the Mongoose ODM to interact with a MongoDB database.
+
+The purpose of this project is to build an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.
+
+This API is especially useful for a social media startup that uses a NoSQL database. Using a MongoDB database, and the Mongoose ODM enables website to handle large amounts of unstructured data.
 
 
 ## Table of Contents
 
-* [Installation](#installation)
+* [Description](#description)
+* [Table of Contents](#table-of-contents)
+* [Technologies](#technologies)
+* [Tasks List](#tasks-list)
 * [Usage](#usage)
-* [Contributions](#contributions)
-* [Testing](#testing)
-* [Credits](#credits)
 * [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Demo Video](#demo-video)
+* [Questions](#questions)
 
-## Installation
-To install this application:
-* clone the repo 
-* run 'npm init' 
-* install MongoDb for Windows: https://www.mongodb.com/try/download/community; Install MondoDb for Mac: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
-* run npm i epxress mongoose
+## Technologies
 
+* MongoDB
+* Mongoose
+* Express.js
+* Dotenv
+* JavaScript
+
+## Tasks List
+
+- [x] Upon starting the server, Mongoose models are synced to the MongoDB database.
+- [x] API GET routes in Insomnia Core for users and thoughts display data in a formatted JSON.
+- [x] Add functionality to create, update, and delete users and thoughts in database.
+- [x] Add functionality to create and delete reactions to thoughts and add and remove friends to a user’s friend list.
 
 ## Usage
-An easy and simple way to generate a team web-page with with contact informaiton for all employess. It is requiring to add a manager that has a name, id, email and office number fields. Also includes an option to add an engineers and interns to the page with additional fiels reqiored such as github name and a school accordingly.
 
-## Contributions
-If you want to contribute please contact Yev
+First install the following tools on your machine:
 
-## Testing
-No tests
+* Express.js (can be installed by running npm intall)
+* MongoDB (checkout the following link: [MongoDB Download Center](https://www.mongodb.com/try/download/community))
+* Mongoose (can be installed by running npm install)
 
-## Video recording
-Video recording located in the folder in the root of directory assets/videos/social-network-api
+ After installing MongoDB, run the following commands inside your terminal:
 
-## Credits
-GitHub: 
-* https://www.github.com/down-dive
+```bash
+git clone <from-repository-on-github>
+npm install
+```
+To run the sever, use the following command in your terminal:
+
+```
+npm start
+OR
+node server.js
+```
 
 ## License
-@ Yevgeniya Terlyuk
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Contributing
+
+Pull requests are welcome. For major changes, please first open an issue to discuss what you would like to change.
+
+## Tests
+
+You can use "Insomnia Core" or "Postman" to test different API routes for "User", "Thought" and "Reaction" models. The following routes have been implemented in the API:
+1. Get all data
+2. Get a single data using the ID
+2. Post a new data
+3. Put (update) a single data using the ID
+4. Delete a single data using the ID
+
+## Demo Video
+
+Please click on the following link to see the Demo video for this project:
+[Link to Demo](https://drive.google.com/drive/u/0/folders/1TCALiNmZuhhefBNEir4PmsQYCwSqaVZR)
+
+## Questions
+
+If you have any questions please use the following two links to contact me:
+
+* [GitHub](https://github.com/down-dive)
+
+* [Email Address](mailto:yterlyuk@gmail.com)
